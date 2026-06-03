@@ -11,12 +11,8 @@ Flashdrop is a lightweight Flask web application designed for secure file transf
 
 ## Installation & Configuration
 
-#### 1. Clone the Repository
-Open your terminal or command prompt and run:
-```cmd
-git clone [https://github.com/CyprienThuillier/flashdrop.git](https://github.com/CyprienThuillier/flashdrop.git)
-cd flashdrop
-```
+#### 1. Download the source code via this release
+
 #### 2. Automatic Setup
 
 Simply double-click on the install.bat file located at the root of the project.
