@@ -9,12 +9,6 @@ Flashdrop is a lightweight Flask web application designed for secure file transf
 - **Local HTTPS**: Native SSL configuration ensuring that file transfers across your local Wi-Fi network remain confidential.
 - **Modern UI**: Clean drag-and-drop area with a real-time upload progress bar.
 
-## Prerequisites
-
-Before setting up Flashdrop, ensure you have the following installed on your system:
-- **Python 3.8+**
-- **OpenSSL** (Pre-installed on most Linux/macOS systems; required to generate local SSL certificates)
-
 ## Installation & Configuration
 
 #### 1. Clone the Repository
