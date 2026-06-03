@@ -1,4 +1,4 @@
-# Flashdrop ⚡ (Windows Version)
+# Flashdrop ⚡ (Linux / macOS Version)
 
 Flashdrop is a lightweight Flask web application designed for secure file transfer and storage within a local area network (LAN). Uploaded files are automatically encrypted server-side and stored securely.
 
@@ -9,29 +9,42 @@ Flashdrop is a lightweight Flask web application designed for secure file transf
 - **Local HTTPS**: Native SSL configuration ensuring that file transfers across your local Wi-Fi network remain confidential.
 - **Modern UI**: Clean drag-and-drop area with a real-time upload progress bar.
 
+
+## Prerequisites
+
+Ensure you have **OpenSSL** installed (pre-installed on most Linux/macOS systems) to allow the automatic generation of local SSL certificates.
+
+
 ## Installation & Configuration
 
-#### 1. Download the source code via this release
+### 1. Download the source code via this release
 
-#### 2. Automatic Setup
+### 2. Automatic Setup
 
-Simply double-click on the install.bat file located at the root of the project.
+Run the installer script to configure everything automatically:
+
+```bash
+bash install.sh
+```
 
 This script will automatically:
 
-    Prompt you to set your access password.
+    Prompt you to securely enter your access password.
 
-    Generate a highly secure unique Flask SECRET_KEY.
+    Generate a secure cryptographically random unique Flask SECRET_KEY.
 
-    Setup a Python Virtual Environment (venv) and install all required dependencies.
+    Set up a Python Virtual Environment (venv) and install dependencies.
 
     Create the necessary folders (certs/ and uploads/).
 
-    Attempt to generate local SSL certificates (requires OpenSSL).
+    Generate local self-signed SSL certificates for HTTPS.
 
 ## Running the Application
 
-To start the Flashdrop server, simply double-click on the run.bat file.
+To start the Flashdrop server, run the following launcher script:
+Bash
+
+bash run.sh
 
 The application will be accessible from your local machine at:
 
@@ -39,8 +52,7 @@ The application will be accessible from your local machine at:
 
 #### Accessing Flashdrop from a Smartphone (iPhone/Android) on the same network
 
-Find your computer's local IP address (e.g., 192.168.1.71).
-
+Find your computer's local IP address (e.g., 192.168.1.71 using ip route | grep src or ifconfig).
 Open your mobile browser and enter the exact address (manually appending /login at the end):
 
 -> https://192.168.1.71:5443/login
@@ -63,8 +75,8 @@ Note on Local HTTPS: Since the SSL certificate is self-signed, your browser will
 ├── uploads/           # Destination folder for encrypted files (.enc) (IGNORED BY GIT)
 ├── .env               # Local configuration file (IGNORED BY GIT)
 ├── .gitignore         # Prevents sensitive files from being pushed
-├── install.bat        # Automatic installer for Windows
-└── run.bat            # One-click app launcher for Windows
+├── install.sh         # Automatic installer for Unix systems
+└── run.sh             # Terminal app launcher for Unix systems
 ```
 
 ## Security & Production Notes
